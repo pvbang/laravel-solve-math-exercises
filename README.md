@@ -1,6 +1,6 @@
 ## laravel solve math exercises
 
-Install:
+## Install:
 ```
 composer install 	// or composer install --ignore-platform-reqs   // or composer update--ignore-platform-reqs
 cp .env.example .env
@@ -10,6 +10,6 @@ php artisan migrate:fresh --seed
 php artisan serve
 ```
 
-Dev: Phan Văn Bằng
-Facebook: fb.com/it0902
-Github: github.com/ilyouu
+### Dev: Phan Văn Bằng
+### Facebook: fb.com/it0902
+### Github: github.com/ilyouu
