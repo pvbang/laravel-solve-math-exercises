@@ -1,11 +1,10 @@
 ## laravel solve math exercises
 
 ### Install: (Run in Terminal)
-```
+```bash
 composer install 	
 # or: composer update 
 # or: composer install --ignore-platform-reqs  
-
 cp .env.example .env
 php artisan key:generate
 create database: laravel-solve-math-excercises
