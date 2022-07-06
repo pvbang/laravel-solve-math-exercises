@@ -6,9 +6,9 @@ composer install
 # or: composer update 
 # or: composer install --ignore-platform-reqs  
 cp .env.example .env
-php artisan key:generate
-create database: laravel-solve-math-excercises
+create database: laravel-solve-math-excercises  # utf8_unicode_ci
 php artisan migrate:fresh --seed
+php artisan key:generate
 php artisan serve
 ```
 
