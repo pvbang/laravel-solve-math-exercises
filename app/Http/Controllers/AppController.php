@@ -12,6 +12,10 @@ use App\Models\Grade;
 use App\Models\Subject;
 use App\Models\Chapter;
 use App\Models\Lesson;
+use App\Http\Controllers\Goutte;
+use Weidner\Goutte\GoutteFacade;
+
+use Storage;
 
 class AppController extends Controller
 {
@@ -30,8 +34,16 @@ class AppController extends Controller
         ->with('chapters', $chapters)
         ->with('lessons', $lessons)
         ;
-    }
 
+        // $url = "http://127.0.0.1:8080/";
+        // echo "<script>window.open('".$url."', '_blank')</script>";
+       
+        // $url = "http://www.google.co.in/intl/en_com/images/srpr/logo1w.png";
+        // $contents = file_get_contents($url);
+        // $name = substr($url, strrpos($url, '/images/')+1);
+        // Storage::put($name, $contents);
+
+    }
 
     //
     public function grade($grade){
@@ -72,7 +84,7 @@ class AppController extends Controller
         $chapters = Chapter::all();
         $lessons = Lesson::all();
 
-        $rightLessons = DB::table('lessons')->orderBy('updated_at', 'asc')->take(15)->get();
+        $rightLessons = DB::table('lessons')->orderBy('updated_at', 'desc')->take(15)->get();
 
         $dataChapters = DB::table('chapters')->where('id_subject', $dataSubject->id_subject)->get();
 
@@ -97,7 +109,7 @@ class AppController extends Controller
         $dataLesson = DB::table('lessons')->where('slug', $lesson)->first();
 
         $datachapters = DB::table('chapters')->where('id_subject', $dataSubject->id_subject)->get();
-        $rightLessons = DB::table('lessons')->orderBy('updated_at', 'asc')->take(15)->get();
+        $rightLessons = DB::table('lessons')->orderBy('updated_at', 'desc')->take(20)->get();
 
         $users = User::all();
         $grades = Grade::all();

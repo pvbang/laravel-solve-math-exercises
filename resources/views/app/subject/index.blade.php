@@ -13,7 +13,7 @@ $count = 0;
         @if ($count == 0)
             <div class="accordion-item" id="{{ $chapter->slug }}">
                 <h2 class="accordion-header" id="headingOne">
-                    <button class="accordion-button text-info" type="button" data-mdb-toggle="collapse"
+                    <button class="accordion-button text-black fw-bolder text-uppercase" type="button" data-mdb-toggle="collapse"
                         data-mdb-target="#slug{{ $chapter->id_chapter }}" aria-expanded="true"
                         aria-controls="panelsStayOpen-collapseOne">
                         {{ $chapter->name_chapter }}
@@ -34,7 +34,7 @@ $count = 0;
         @else
             <div class="accordion-item" id="{{ $chapter->slug }}">
                 <h2 class="accordion-header" id="headingOne">
-                    <button class="accordion-button text-info" type="button" data-mdb-toggle="collapse"
+                    <button class="accordion-button text-black fw-bolder text-uppercase" type="button" data-mdb-toggle="collapse"
                         data-mdb-target="#slug{{ $chapter->id_chapter }}" aria-expanded="true"
                         aria-controls="panelsStayOpen-collapseOne">
                         {{ $chapter->name_chapter }}

@@ -16,7 +16,7 @@
 
 <body>
 
-    <nav class="navbar navbar-light bg-white">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <div class="container">
             <a class="navbar-brand mb-0 h1" href="/">GIẢI BÀI TẬP TOÁN</a>
             <form class="d-flex input-group w-auto">
@@ -31,13 +31,13 @@
         </div>
     </nav>
 
+
     <div class="container">
         <div class="row">
             <div class="btn-group shadow-0" role="group" aria-label="Basic example" style="margin-top:7px">
                 <a type="button" href="/" class="btn btn-info rounded-0 shadow-0 border border-light">
                     <i class="fas fa-home text-white"></i>&ensp;Trang chủ
                 </a>
-
                 @foreach ($grades as $grade)
                     <div class="dropdown">
                         <a class="btn btn-info rounded-0 shadow-0 border border-light" id="dropdownMenuLink"
@@ -45,20 +45,17 @@
                             {{ $grade->name_grade }}
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            @foreach ($chapters as $chapter)
-                                @foreach ($subjects as $subject)
-                                    @if ($chapter->id_subject == $subject->id_subject)
-                                        @if ($subject->id_grade == $grade->id_grade)
-                                            <li><a class="dropdown-item" href="/{{ $chapter->slug }}">{{ $chapter->name_chapter }}</a></li>
-                                            @break
-                                        @endif
-                                    @endif
-                                @endforeach
+                            @foreach ($subjects as $subject)
+                                @if ($subject->id_grade == $grade->id_grade)
+                                    <li>
+                                        <a class="dropdown-item"
+                                            href="/{{ $grade->slug }}/{{ $subject->slug }}">{{ $subject->name_subject }}</a>
+                                    </li>
+                                @endif
                             @endforeach
                         </ul>
                     </div>
                 @endforeach
-
             </div>
         </div>
 
@@ -67,7 +64,6 @@
         @yield('content')
     </div>
 
-    <br>
     <br>
     <!-- Footer -->
     <footer class="text-center text-lg-start bg-light text-muted border-top">
@@ -83,7 +79,8 @@
                     </div>
                     <div class="col-md-3 d-flex align-items-center">
                         <div class="p-2 d-flex align-items-center">
-                            <a href="tel:8496196652" class="text-black"><i class="fas fa-phone"></i>&ensp;096196652</a>
+                            <a href="tel:8496196652" class="text-black"><i
+                                    class="fas fa-phone"></i>&ensp;096196652</a>
                         </div>
                     </div>
                     <div class="col-md-6">

@@ -48,8 +48,8 @@
                     </div>
 
                     <span class="mb-4" style="margin: 10px;">Nội dung:</span>
-
-                    <textarea id="mytextarea" name="content">{!! $lesson->content !!}</textarea>
+                    
+                    <textarea id="mytextarea" name="content">{{ $lesson->content }}</textarea>
 
                     <br>
                     <div class="form-group">

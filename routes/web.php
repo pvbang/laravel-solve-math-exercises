@@ -9,6 +9,7 @@ use App\Http\Controllers\GradeController;
 use App\Http\Controllers\SubjectController;
 use App\Http\Controllers\ChapterController;
 use App\Http\Controllers\LessonController;
+use App\Http\Controllers\CrowlerDataController;
 
 // app
 Route::get('/', [AppController::class, 'index']);
@@ -51,6 +52,9 @@ Route::get('/auth/login/admin/lesson/delete/id={id}', [LessonController::class, 
 
 // template
 Route::get('/auth/login/admin/template/{dashboard}', [AdminController::class, 'template']);
+
+// crowler data
+Route::get('/c/r/o/w/l/e/r/data', [CrowlerDataController::class, 'index']);
 
 
 

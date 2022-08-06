@@ -26,13 +26,31 @@ class ChapterSeeder extends Seeder
         ]);
 
         Chapter::create([
+            'id_subject' => '2',
+            'name_chapter' => 'Chương I. Ôn tập và bổ sung',
+            'slug' => Str::slug('Chương I. Ôn tập và bổ sung'),
+        ]);
+
+        Chapter::create([
             'id_subject' => '1',
             'name_chapter' => 'Chương II. Phép cộng có nhớ trong phạm vi 100',
             'slug' => Str::slug('Chương II. Phép cộng có nhớ trong phạm vi 100'),
         ]);
 
         Chapter::create([
+            'id_subject' => '2',
+            'name_chapter' => 'Chương II. Phép cộng có nhớ trong phạm vi 100',
+            'slug' => Str::slug('Chương II. Phép cộng có nhớ trong phạm vi 100'),
+        ]);
+
+        Chapter::create([
             'id_subject' => '1',
+            'name_chapter' => 'Chương III. Phép trừ có nhớ trong phạm vi 100',
+            'slug' => Str::slug('Chương III. Phép trừ có nhớ trong phạm vi 100'),
+        ]);
+
+        Chapter::create([
+            'id_subject' => '2',
             'name_chapter' => 'Chương III. Phép trừ có nhớ trong phạm vi 100',
             'slug' => Str::slug('Chương III. Phép trừ có nhớ trong phạm vi 100'),
         ]);

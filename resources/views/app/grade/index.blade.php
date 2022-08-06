@@ -7,10 +7,10 @@
 
 <div class="row">
     @foreach ($dataSubjects as $dataSubject)
-        <div class="col-md-4">
+        <div class="col-md-6">
             <div class="card border border-info shadow-0">
                 <a href="/{{ $dataGrade->slug }}/{{ $dataSubject->slug }}"
-                    class="card-header text-center bg-info text-white">{{ $dataSubject->name_subject }}</a>
+                    class="card-header text-center bg-info text-white text-uppercase">{{ $dataSubject->name_subject }}</a>
 
                 <ul class="list-group list-group-light list-group-small">
                     @foreach ($chapters as $chapter)
