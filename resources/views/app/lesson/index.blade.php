@@ -9,7 +9,10 @@
 </nav>
 
 <div class="card border border-info shadow-0" style="margin-bottom: 10px">
-    <div class="card-header text-center text-uppercase text-info"><b>{{ $dataLesson->name_lesson }}</b></div>
+    <div class="card-header text-center text-uppercase text-info">
+        <img src="{{URL('img/science.png')}}" width="25px" style="margin-right: 5px"/>
+        <b>{{ $dataLesson->name_lesson }}</b>
+    </div>
     <div class="card-body">
         {!! $dataLesson->content !!}
     </div>

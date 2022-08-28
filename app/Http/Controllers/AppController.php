@@ -26,6 +26,26 @@ class AppController extends Controller
         $subjects = Subject::all();
         $chapters = Chapter::all();
         $lessons = Lesson::all();
+        $rightLessons = DB::table('lessons')->orderBy('updated_at', 'asc')->take(30)->get();
+
+        $r1 = array();
+        $r2 = array();
+        $r3 = array();
+
+        $num = 0;
+
+        foreach($rightLessons as $r) {
+            if($num < 10) {
+                $r1[$num] = $r;
+            }
+            else if($num >= 10 && $num < 20) {
+                $r2[$num] = $r;
+            }
+            else {
+                $r3[$num] = $r;
+            }
+            $num++;
+        }
 
         return view('app.index')->with('route', 'index')
         ->with('users', $users)
@@ -33,6 +53,9 @@ class AppController extends Controller
         ->with('subjects', $subjects)
         ->with('chapters', $chapters)
         ->with('lessons', $lessons)
+        ->with('rightLessons1', $r1)
+        ->with('rightLessons2', $r2)
+        ->with('rightLessons3', $r3)
         ;
 
         // $url = "http://127.0.0.1:8080/";
@@ -54,6 +77,26 @@ class AppController extends Controller
 
         $dataGrade = DB::table('grades')->where('slug', $grade)->first();
         $dataSubjects = DB::table('subjects')->where('id_grade', $dataGrade->id_grade)->get();
+        $rightLessons = DB::table('lessons')->orderBy('updated_at', 'asc')->take(30)->get();
+
+        $r1 = array();
+        $r2 = array();
+        $r3 = array();
+
+        $num = 0;
+
+        foreach($rightLessons as $r) {
+            if($num < 10) {
+                $r1[$num] = $r;
+            }
+            else if($num >= 10 && $num < 20) {
+                $r2[$num] = $r;
+            }
+            else {
+                $r3[$num] = $r;
+            }
+            $num++;
+        }
 
         $users = User::all();
         $grades = Grade::all();
@@ -64,6 +107,9 @@ class AppController extends Controller
         return view('app.index')->with('route', 'grade')
         ->with('dataGrade', $dataGrade)
         ->with('dataSubjects', $dataSubjects)
+        ->with('rightLessons1', $r1)
+        ->with('rightLessons2', $r2)
+        ->with('rightLessons3', $r3)
         ->with('users', $users)
         ->with('grades', $grades)
         ->with('subjects', $subjects)
