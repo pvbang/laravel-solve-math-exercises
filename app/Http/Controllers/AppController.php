@@ -72,7 +72,7 @@ class AppController extends Controller
     public function grade($grade){
 
         if($grade == 'admin') {
-            return Redirect('/auth/login/admin/index');
+            return Redirect('/auth/login/admin/login');
         }
 
         $dataGrade = DB::table('grades')->where('slug', $grade)->first();

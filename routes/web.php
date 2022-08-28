@@ -19,6 +19,7 @@ Route::get('/{grade}/{subject}', [AppController::class, 'subject']);
 Route::get('/{grade}/{subject}/{lesson}', [AppController::class, 'lesson']);
 
 // admin
+Route::get('/auth/login/admin/login', [AdminController::class, 'login']);
 Route::get('/auth/login/admin/index', [AdminController::class, 'index']);
 Route::get('/auth/login/admin/dashboard', [AdminController::class, 'index']);
 

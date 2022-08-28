@@ -16,6 +16,11 @@ use App\Models\Lesson;
 class AdminController extends Controller
 {
     //
+    public function login(){
+
+        return view('admin.dashboard.login');
+    }
+
     public function index(){
 
         $grades = DB::table('grades')->count();
